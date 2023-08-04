@@ -50,6 +50,7 @@ while True:
     draw.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
 
     # Shell scripts for system monitoring from here : https://unix.stackexchange.com/questions/119126/command-to-display-memory-usage-disk>    cmd = "hostname -I | cut -d\' \' -f1"
+    cmd = "hostname -I | cut -d\' \' -f1"
     IP = subprocess.check_output(cmd, shell = True )
     cmd = "top -bn1 | grep load | awk '{printf \"CPU: %.0f%%\", $(NF-2)}'"
     CPU = subprocess.check_output(cmd, shell = True )
